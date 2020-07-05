@@ -1,0 +1,24 @@
+<view class='container' wx:for="{{ detailData }}" wx:for-item="item" wx:key="index">
+  <view class='img-wrap'>
+    <image class='head-image' src='{{ item.imgSrc }}'></image>
+    <image 
+      src="{{ isPlayingMusic ? '/images/music-stop.png' : '/images/music.png'}}" 
+      class='music' bindtap="musicHandle"></image>
+  </view>
+  <view class='author-date'>
+    <image class='avatar' src='/images/avatar-logo.png'></image>
+    <text class='author'>{{ item.author }}</text>
+    <text class='const-text'>发表于</text>
+    <text class='date'>{{ item.dateTime }}</text>
+  </view>
+  <text class='title'>{{ item.title }}</text>
+  <view class='tool'>
+    <view class='circle-img'>
+      <image wx:if="{{ collected }}" bindtap='handleCollect' src='/images/collect-active.png'></image>
+      <image wx:else src='/images/collect.png' bindtap='handleCollect'  ></image>
+      <image catchtap='shareHandle'  class='share' src='/images/share.png'></image>
+    </view>
+    <view class='horizon'></view>
+  </view>
+  <text class='detail'>{{ item.content }}</text>
+</view>

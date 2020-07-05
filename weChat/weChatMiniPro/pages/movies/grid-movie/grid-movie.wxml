@@ -1,0 +1,20 @@
+<!-- 编写 grid-movie-template  -->
+
+<import src="../movie/movie-template" />
+
+<template name="gridMovieTemplate">
+  <!-- <scroll-view class='grid-container' scroll-x="false" scroll-y="true" bindscrolltolower="scrollToLower"> -->
+  <view class='grid-container'>
+    <block>
+      <view 
+        class='sigle-view-container' 
+        wx:for="{{ movies }}" 
+        wx:for-item="movie" 
+        wx:key="movie.movieId"
+      >
+        <template is="movieTemplate" data="{{ ...movie }}" />
+      </view>
+    </block>
+  </view>
+  <!-- </scroll-view> -->
+</template>

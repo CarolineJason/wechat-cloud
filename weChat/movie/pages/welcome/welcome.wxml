@@ -1,0 +1,11 @@
+<view class="welcome-container">
+  <view class="welcome-content" hover-class="none" hover-stop-propagation="false">
+    <image class="logo-image" src="{{welcomeUserAwatar}}" ></image>
+    <view class="text">
+      加油 {{welcomeUserName}}!
+    </view>
+    <view catchtap="handleStart">
+      <text class="go-button">开启小程序之旅</text>
+    </view>
+  </view>
+</view>

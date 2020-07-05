@@ -1,0 +1,34 @@
+page {
+  background: #b3d4db;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 50%;
+  margin-top: 160rpx;
+}
+
+.user-name {
+  display: block;
+  font-size: 38rpx;
+  font-weight: bold;
+}
+
+.moto {
+  display: block;
+  font-size: 28rpx;
+  margin-top: 200rpx;
+  padding: 20rpx;
+  border-radius: 18rpx;
+  color: #405f80;
+  font-weight: bold;
+  border:1px solid orangered;
+}

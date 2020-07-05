@@ -1,0 +1,19 @@
+<view class="container">
+  <view>小程序云数据库:</view>
+  <button bindtap="insert">插入数据</button>
+  <button bindtap="update">更新数据</button>
+  <button bindtap="delete">删除数据</button>
+  <button bindtap="search">查询数据</button>
+</view>
+
+<view>
+  <text>小程序云函数:</text>
+  <button bindtap="sum">云函数sum求和</button>
+  <button bindtap="getOpenId">获取openId</button>
+  <button bindtap="batchDel">批量删除数据库里的数据</button>
+</view>
+
+<view>
+  <text>小程序云存储</text>
+  <button bindtap="upload">云存储</button>
+</view>

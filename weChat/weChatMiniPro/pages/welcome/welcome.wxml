@@ -1,0 +1,8 @@
+<view class='container'>
+  <image class='user-avatar' src="/images/avatar-logo.png"></image>
+  <text class='user-name'>hello, Jason</text>
+  <view bindtap='handleWrap'>
+  <!-- catchtap 阔以防止 事件 冒泡 -->
+    <text class='moto' catchtap="handleStart">开启小程序之旅</text>
+  </view>
+</view>

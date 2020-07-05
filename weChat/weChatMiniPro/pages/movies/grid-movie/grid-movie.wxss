@@ -1,0 +1,17 @@
+@import '../movie/movie-template.wxss';
+
+
+/* .grid-container {
+  margin: 20rpx 0 30rpx 6rpx;
+  height: 1300rpx;
+} */
+
+.sigle-view-container {
+  float: left;
+  margin-top: 30rpx;
+}
+
+.grid-container{
+    height: 1300rpx;
+    margin:40rpx 0 40rpx 6rpx;
+}

@@ -1,0 +1,23 @@
+<!-- import 这里必须是 自闭合   -->
+<import src="./post-item/post-item-temp.wxml" />
+
+<view>
+  <swiper catchtap='swiperTap' class='swiper-container' indicator-dots="true" indicator-active-color="lime" autoplay="true" interval="5000" >
+    <swiper-item>
+      <image class='swiper-image' src='/images/avatar.png' data-postId="0"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class='swiper-image' src='/images/timg01.png' data-postId="2"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class='swiper-image' src='/images/timg02.png' data-postId="1"></image>
+    </swiper-item>
+  </swiper>
+  <block wx:for="{{ contents }}" wx:for-item='item' wx:key="index">
+    <!-- template  也是自闭和 -->
+    <view bindtap='handleDetailTap' data-postId="{{ item.postId }}">
+      <template is="postItem" data="{{ ...item }}" />
+    </view>
+  </block>
+
+</view>

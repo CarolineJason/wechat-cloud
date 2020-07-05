@@ -1,0 +1,20 @@
+<template name="postItem">
+	<view class='post-container'>
+		<view class='post-logoInfo'>
+			<image class='post-logo' src='{{ avatar }}' />
+			<text class='post-title'>{{ date }}</text>
+		</view>
+		<text class='post-content-title'>{{ title }}</text>
+		<image class='post-content-img' src='{{ content_img }}' />
+		<text class='post-content'>
+        {{ content }}
+    </text>
+		<view class='comment'>
+			<text class='comment-list'>⭐️</text>
+			<text class='comment-list'>{{ connect_num }}</text>
+			<text class='comment-list'>👀</text>
+			<text class='comment-list'>{{ view_num }}</text>
+		</view>
+	</view>
+</template>
+
