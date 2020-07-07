@@ -22,7 +22,7 @@
 		"showShadowRootInWxmlPanel": true
 	},
 	"appid": "wx2514eca2632100c9",
-	"projectname": "cloudFunction",
+	"projectname": "cloudFunctions",
 	"libVersion": "2.8.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},

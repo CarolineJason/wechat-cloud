@@ -15,5 +15,11 @@
 
 <view>
   <text>小程序云存储</text>
-  <button bindtap="upload">云存储</button>
+  <button bindtap="upload">上传图片</button>
+  <button size="mini" bindtap="getFields">展示图片</button>
 </view>
+
+<block wx:for="{{ images }}">
+  <image src="{{item.fileID}}"></image>
+  <button data-fileid="{{ item.fileID }}" size="mini" bindtap="downloadFile">下载图片</button>
+</block>

@@ -9,10 +9,7 @@ const db = wx.cloud.database();
 
 Page({
   data: {
-    userInfo: {},
-    logged: false,
-    takeSession: false,
-    requestResult: ''
+    images: []
   },
 
   insert: function() {
@@ -66,6 +63,43 @@ Page({
       .catch((err) => {
         console.log(err);
       })
+  },
+
+  getFields: function() {
+    wx.cloud.callFunction({
+      name: 'login',
+    }).then((res) => {
+      console.log(res);
+      db.collection('image').where({
+        _openid: res.result.openid
+      }).get().then((res2) => {
+        console.log('res2:', res2);
+        this.setData({
+          images: res2.data,
+        })
+      })
+    })
+  },
+
+  downloadFile: function(event){
+    wx.cloud.downloadFile({
+      fileID: event.target.dataset.fileid,
+      success: res => {
+        console.log(res.tempFilePath);
+        // 保存图片到相册
+        wx.saveImageToPhotosAlbum({
+          filePath: res.tempFilePath,
+          success(res) {
+            wx.showToast({
+              title: '保存成功',
+            })
+           }
+        })
+      },
+      fail: err => {
+        // handle error
+      }
+    })
   },
 
   // 小程序 云函数
@@ -123,7 +157,7 @@ Page({
         
         // 将 tempFilePaths 存储到 数据库中
         wx.cloud.uploadFile({
-          cloudPath: 'example.png',
+          cloudPath: new Date().getTime() + '.png',
           filePath: tempFilePaths[0], // 文件路径
         }).then(res => {
           console.log(res);
