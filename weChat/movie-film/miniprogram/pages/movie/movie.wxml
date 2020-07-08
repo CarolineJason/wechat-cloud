@@ -1,2 +1,11 @@
-<!--miniprogram/pages/movie.wxml-->
-<text>miniprogram/pages/movie.wxml</text>
+<view class="movie" wx:for="{{movieList}}" wx:key="{{index}}">
+  <image class="movie-img" src="{{item.images.small}}"></image>
+  <view class="movie-info">
+    <view class="movie-title">{{item.title}}</view>
+    <view class="movie-score">观众评分: {{ item.rating.average }}</view>
+    <view>
+      主演: <text wx:for="{{item.casts}}">{{item.name}}</text>
+    </view>
+    <view>上映年份: {{item.year}}</view>
+  </view>
+</view>
