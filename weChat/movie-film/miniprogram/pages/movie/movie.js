@@ -29,6 +29,12 @@ Page({
     })
   },
 
+  goComment:function(event) {
+    wx.navigateTo({
+      url: `../comment/comment?movieid=${event.target.dataset.movieid}`,
+    });
+  },
+
   onRefresh(){
     //在当前页面显示导航条加载动画
     wx.showNavigationBarLoading(); 

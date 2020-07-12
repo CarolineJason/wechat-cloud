@@ -1,0 +1,22 @@
+<view class="userInfo">
+  <view class="avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="info">
+    <open-data class="nickName" type="userNickName"></open-data>
+    <open-data class="country mt10" type="userCountry"></open-data>
+    <open-data class="city mt10" type="userCity"></open-data>
+    <open-data class="provice mt10" type="userProvince"></open-data>
+  </view>
+</view>
+
+<view>
+  <button
+    class="mt10"
+    type="primary"
+    open-type="getUserInfo"
+    bindgetuserinfo="bindgetuserinfo"
+  >
+    获取用户信息
+  </button>
+</view>

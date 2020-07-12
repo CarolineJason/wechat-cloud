@@ -1,0 +1,57 @@
+<view class="comment">
+  <view
+    class="comment-container"
+    style="background: url({{comment.images.large}}) no-repeat top/cover">
+  </view>
+  <view class="comment-mask"></view>
+  <view class="comment-info">
+    <image src="{{comment.images.large}}" class="comment-img"></image>
+    <view class="comment-detail">
+      <view>
+        <text class="comment-title">{{comment.title}}</text>
+        <text class="comment-score">{{comment.rating.average}}</text>
+      </view>
+      <text class="country">地区:</text>
+      <text wx:for="{{comment.countries}}" wx:key="index">
+        <text class="comment-coountry">{{item}}</text>
+      </text>
+      <view class="writers">
+        <text>导演:</text>
+        <text wx:for="{{comment.writers}}" wx:key="index">
+          <text>{{item.name}}</text>
+        </text>
+      </view>
+    </view>
+  </view>
+  <view class="movie-introduce">{{comment.summary}}</view>
+
+  <view class="input-comment">
+    <van-field
+      value="{{ commentInfo }}"
+      placeholder="雁过留痕......"
+      border="{{ false }}"
+      bind:change="onFieldChange"
+    />
+  </view>
+
+  <view class="rate">
+    <van-rate
+      value="{{ rateValue }}"
+      size="{{ 25 }}"
+      allow-half
+      color="#ee0a24"
+      void-color="#eee"
+      void-icon="star"
+      bind:change="onRateChange"
+    />
+  </view>
+  <view class="upload">
+    <button bindtap="uploadImg" type="primary">上传图片</button>
+  </view>
+  <view class="pre-wrapper">
+    <image class="pre-img" src="{{item}}" wx:for="{{images}}"  wx:key="{{item}}"></image>
+  </view>
+<button bindtap="submitComment" block type="primary" size="large">提交评论</button>
+
+
+</view>
